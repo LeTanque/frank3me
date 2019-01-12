@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset=utf-8> 
+	<title>My first three.js app</title> 
+	<style> 
+		body { margin: 0; overflow-y: hidden; } 
+		canvas { width: 100%; height: 100% } 
+	</style> 
+</head> 
+<body> 
+<script src="js/three.min.js"></script> 
+
+<script> // Our Javascript will go here. 
+var scene = new THREE.Scene(); 
+
+// (FOV, aspect ratio W:H, near and far clipping plane)
+var camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 1000 ); 
+var renderer = new THREE.WebGLRenderer(); 
+
+// Where magic happens
+renderer.setSize( window.innerWidth, window.innerHeight ); 
+// Half size for heavy applications
+//renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
+// Same size, half the resolution
+//renderer.setSize( window.innerWidth/2, window.innerHeight/2, false);
+
+document.body.appendChild( renderer.domElement );
+
+// Cube time
+// Box geometry. This object contains all points (vertices) and fill (faces) of the cube
+var geometry = new THREE.BoxGeometry( 1, 1, 1 ); 
+// Starter material with only one property object.
+var material = new THREE.MeshBasicMaterial( { color: 0x3faa00 } ); 
+// This is a mesh. A mesh object takes a geometry and applies a material to it, as defined above. 
+var cube = new THREE.Mesh( geometry, material ); 
+// By default, scene.add places the object and camera at (0,0,0), which means the camera is inside the object and you won't see much if anything. 
+scene.add( cube ); 
+// We correct for this by moving the camera out a bit.
+camera.position.z = 3;
+
+// Cool, and you can't see shit yet! That's because we haven't actually rendered anything yet. 
+// We need a render or animate loop.
+function animate() { 
+	requestAnimationFrame( animate ); 
+	cube.rotation.x += 0.0005; 
+	cube.rotation.y += 0.01;
+	cube.rotation.z += 0.0009;
+	renderer.render( scene, camera ); 
+} 
+animate();
+
+</script> 
+
+
+
+
+
+</body> 
+</html>

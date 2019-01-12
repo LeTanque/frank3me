@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset=utf-8> 
+	<title>My second three.js app</title> 
+	<style> 
+		body { margin: 0; overflow-y: hidden; } 
+		canvas { width: 100%; height: 100% } 
+		#info {
+			position: absolute;
+			top: 10px;
+			width: 100%;
+			text-align: center;
+			z-index: 100;
+			display:block;
+		}
+	</style> 
+</head> 
+<body> 
+<script src="js/three.min.js"></script> 
+
+<script> // Our Javascript will go here. 
+// (FOV, aspect ratio W:H, near and far clipping plane)
+var camera = new THREE.PerspectiveCamera( 15, window.innerWidth / window.innerHeight, 1, 500 );
+camera.position.set( 0, 0, 100 );
+camera.lookAt( 0, 0, 0 );
+var scene = new THREE.Scene(); 
+var renderer = new THREE.WebGLRenderer();
+
+renderer.setSize( window.innerWidth, window.innerHeight ); 
+document.body.appendChild( renderer.domElement );
+
+
+var material = new THREE.LineBasicMaterial( { color: 0x003fff } );
+var geometry = new THREE.Geometry();
+geometry.vertices.push(new THREE.Vector3( -10, 0, 0) );
+geometry.vertices.push(new THREE.Vector3( 0, 10, 0) );
+geometry.vertices.push(new THREE.Vector3( 10, 0, 0) );
+var line = new THREE.Line( geometry, material );
+
+
+// By default, scene.add places the object and camera at (0,0,0), which means the camera is inside the object and you won't see much if anything. 
+scene.add( line ); 
+renderer.render( scene, camera );
+
+</script> 
+
+<!--
+	camera = new THREE.PerspectiveCamera( 10, window.innerWidth / window.innerHeight, 0.01, 10 );
+	camera.position.z = 5;
+
+	scene = new THREE.Scene();
+
+	geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+	material = new THREE.MeshNormalMaterial();
+
+	mesh = new THREE.Mesh( geometry, material );
+	scene.add( mesh );
+
+	renderer = new THREE.WebGLRenderer( { antialias: true } );
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	document.body.appendChild( renderer.domElement );
+-->
+
+
+
+<div id="info" style="z-index: 9; color: white;">Cool arrow</div>
+
+
+
+
+
+
+
+
+</body> 
+</html>

@@ -1,0 +1,17 @@
+# Load pages without extensions
+Options +FollowSymLinks -MultiViews
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+RewriteCond %{THE_REQUEST} ^(?:GET|POST)\ /.*\.php\ HTTP.*$ [NC]
+RewriteRule ^(.*)\.php$ $1 [R=301,L]
+
+# 1 Month cache for most static assets
+<filesMatch ".(JPG|jpg|jpeg|png|gif|js|ico)$">
+Header set Cache-Control "max-age=2592000, public"
+</filesMatch>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>frank3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff0000">
+	<meta name="msapplication-TileColor" content="#ff0000">
+	<meta name="msapplication-config" content="/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="apple-mobile-web-app-title" content="frank3">
+	<meta name="application-name" content="frank3">
+	<meta name="description" content="">
+	<meta content="frank3" property="title">
+	<meta name="author" content="get@frank3.me">
+	<script type="text/javascript" src="/troubleshooting/DoNotCopyOrLinkThisFileElseYouWillNotGetAutoUpdatedHelpForYourUsers.js"></script>
+	<script type="text/javascript" src="/js/tdl-minified.js"></script>
+	<!--<script type="text/javascript" src="/js/twgl-full.min.js"></script>-->
+	<script type="text/javascript" src="/js/logo.js"></script>
+	<script type="text/javascript" src="/js/script-webgl-3.js"></script>
+
+</head>
+
+<body class="">
+
+<nav id="#home" class="z-6  w-100  navbar navbar-expand-md navbar-dark bg-dark "  style="position: static;">
+  <a class="navbar-brand" href="/"><span class="font-handwritten font-large">frank</span><span class="font-title-bold  font-larger">3</span></a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse "  id="navbarSupportedContent" style=" ">
+    <ul class="navbar-nav ml-auto" >
+			<li class="nav-item">
+			  <a class="nav-link  " href="#">
+			  	<span class="font-upperspaced" style="">Heart</span>
+			  </a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link  " href="/oneday.html">
+			  	<span class="font-upperspaced" style="">One Day</span>
+			  </a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="font-upperspaced "  style="">
+						work
+					</span>
+				</a>
+				<div class="dropdown-menu  font-upperspaced" aria-labelledby="navbarDropdown" style="">
+					<a class="dropdown-item py-3" href="/designs.html">Designs</a>
+					<div class="dropdown-divider" style=""></div>
+					<a class="dropdown-item py-3" href="/webdev.html">Web Development</a>
+				</div>
+			</li>
+			<li class="nav-item active">
+			  <a class="nav-link  font-body " href="#"><span class="sr-only">(current)</span></a>
+			</li>
+      <li class="nav-item" style=" ">
+      	<a class="nav-link " href="mailto:get@frank3.me">
+      		<span class="font-upperspaced pr-3" style="">e-mail
+      		</span>
+      		<span class="icon-fm3 font-1-5x" style="vertical-align: middle;">
+      		</span>
+      	</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0  display-none">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+
+<div id="wrapper">
+	<div id="support">
+
+		<div class="webgl-hidden" id="have-javascript">
+			<div class="webgl-hidden webgl-div" id="webgl-yes">
+				<h4 class="good" style="">Your browser supports WebGL</h4>
+
+				<div id="webgl-experimental" class="clightgray micro">However, it indicates that support is
+				experimental; Not all WebGL functionality may be supported, and
+				content may not run as expected.</div>
+
+				<div class="display-none">You should see a spinning cube. If you do not, please
+					<a id="support-link">visit the support site for your browser</a>.
+				</div>
+
+				<div id="logo-container">
+					<canvas width="300" height="200" id="webgl-logo"></canvas>
+				</div>
+
+			</div>
+
+			<div class="webgl-hidden webgl-div" id="webgl-disabled">
+				<p>Hmm.  While your browser seems to support WebGL, it is disabled or unavailable.  If possible, please ensure that you are running the latest drivers for your video card.</p>
+				<p id="known-browser" class="webgl-hidden"><a id="troubleshooting-link" href="">For more help, please click this link</a>.</p>
+				<p id="unknown-browser">For more help, please visit the support site for your browser.</p>
+			</div>
+
+			<div class="webgl-hidden webgl-div" id="webgl-no">
+				<p>Oh no!  We are sorry, but your browser does not seem to support WebGL.</p>
+				<div id="upgrade-browser">
+					<p><a id="upgrade-link" href="">You can upgrade <span id="name"></span> by clicking this link.</a></p>
+				</div>
+				<div id="get-browser" class="webgl-hidden">
+					<p>You may want to download one of the following browsers to view WebGL content.</p>
+
+					<p>The following browsers support WebGL on <span id="platform"></span>:</p>
+
+					<div id="webgl-browser-list"></div>
+				</div>
+			</div>
+
+		</div>
+		
+		<div id="no-javascript" class="clightgray smaller italic">Please enable Javascript!</div>
+
+	</div>
+</div>
+
+
+
+<!--
+<script id="modelVertexShader" type="text/something-not-javascript">
+uniform mat4 worldViewProjection;
+attribute vec4 position;
+void main() {
+  gl_Position = (worldViewProjection * position);
+}
+</script>
+
+<script id="modelFragmentShader" type="text/something-not-javascript">
+precision mediump float;
+void main() {
+  gl_FragColor = vec4(0.4, 0.4, 0.5, 0.95);
+}
+</script>
+
+<script id="vs" type="text/something-not-javascript">
+#version 300 es
+uniform mat4 u_matrix;
+in vec4 position;
+in vec2 texcoord;
+out vec2 v_texcoord;
+void main() {
+  gl_Position = (u_matrix * position);
+  v_texcoord = texcoord;
+}
+
+</script>
+<script id="fs" type="text/something-not-javascript">
+#version 300 es
+precision mediump float;
+in vec2 v_texcoord;
+uniform sampler2D u_texture;
+out vec4 outColor;
+void main() {
+  outColor = texture(u_texture, v_texcoord);
+}
+</script>
+-->
+
+<script id="modelVertexShader" type="text/something-not-javascript">
+uniform mat4 worldViewProjection;
+uniform mat4 world;
+uniform mat4 viewInverse;
+uniform mat4 worldInverseTranspose;
+attribute vec4 position;
+attribute vec3 normal;
+varying vec3 v_normal;
+varying vec3 v_surfaceToView;
+void main() {
+  gl_Position = (worldViewProjection * position);
+  v_normal = (worldInverseTranspose * vec4(normal, 0)).xyz;
+  v_surfaceToView = (viewInverse[3] - (world * position)).xyz;
+}
+
+</script>
+<script id="modelFragmentShader" type="text/something-not-javascript">
+#ifdef GL_ES
+precision highp float;
+#endif
+varying vec3 v_normal;
+varying vec3 v_surfaceToView;
+uniform samplerCube envMap;
+
+void main() {
+  vec3 normal = normalize(v_normal);
+  vec3 surfaceToView = normalize(v_surfaceToView);
+  vec4 envColor = textureCube(envMap, -reflect(surfaceToView, normal));
+  gl_FragColor = envColor;
+}
+</script>
+
+
+  </body>
+
+  <!-- Scripts -->
+  <script src="/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+  <script src="/js/script.js"></script>
+</html>
